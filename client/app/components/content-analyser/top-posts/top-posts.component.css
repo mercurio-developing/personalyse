@@ -1,0 +1,43 @@
+.post{
+   font-size:10px;
+   font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+   font-weight: bold;
+   cursor: pointer;
+}
+
+.post:hover{
+   font-size:10px;
+   font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+   font-weight: bold;
+   cursor: pointer;
+   color:rgba(227, 71, 153,1);
+}
+
+.active{
+    text-decoration: underline;
+   font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+   font-weight: bold;
+   cursor: pointer;
+   color:rgba(227, 71, 153,1);
+}
+
+.p{
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-weight:bold;
+  font-size:12px;
+}
+
+.average{
+    font-size: 10px;
+}
+
+.arrow{
+    width: 64px;
+    height: 64px;
+}
+
+.arrow:hover{
+    opacity: 0.5;
+}
+
+

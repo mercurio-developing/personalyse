@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('/assets/fonts/HelveticaNeue.ttf') format('truetype'),
+}
+
+.navbar {
+    background-color:rgb(18,36,57);
+}
+
+.nav-link{
+    color:rgb(227, 71, 153);
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight:Bold;
+    font-size: 14px;
+}

@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6 col-xl-6">
+      <form #artists="ngForm" class="mb-5" (ngSubmit)="onSubmit(artists.value)">
+        <fieldset>
+          <legend class="text-left">
+            <h2>Add playlist</h2>
+          </legend>
+          <!-- artistbook input-->
+          <div class="form-group">
+            <label class="col-md-3 control-label" for="name">ID</label>
+            <div class="col-md-9">
+              <input [ngClass]="{ 'has-danger': user.invalid && (user.dirty || user.touched), 'has-success': user.valid && (user.dirty || user.touched)}"
+                type="text" class="form-control" required (ngModel)="this.user" name="user" placeholder="user id" #user="ngModel">
+            </div>
+          </div>
+          <!-- artistbook input-->
+          <div class="form-group">
+            <label class="col-md-3 control-label" for="name">PLAYLIST ID</label>
+            <div class="col-md-9">
+              <input [ngClass]="{ 'has-danger': playlist.invalid && (playlist.dirty || playlist.touched), 'has-success': playlist.valid && (playlist.dirty || playlist.touched)}"
+                type="text" class="form-control" required (ngModel)="playlist" name="playlist" placeholder="Enter Name" #playlist="ngModel">
+            </div>
+          </div>
+          <!-- Form actions -->
+          <div class="form-group">
+            <div class="col-md-12 text-right mr-5">
+              <button type="submit" [disabled]="!artists.form.valid" class="btn btn-primary btn-lg float-right">Submit</button>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>

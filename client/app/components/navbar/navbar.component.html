@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg">
+  <a class="navbar-brand"  [routerLink]="['/']" ><img src="assets/fingerprint icon 40px.png" alt=""></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+    aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" *ngIf = "_router.url == '/' || _router.url == '/login' || _router.url == '/register' " [routerLink]="['/login']">LOGIN</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" *ngIf="_router.url == '/' || _router.url == '/login' || _router.url == '/register'"  [routerLink]="['/register']">REGISTER</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" *ngIf="_router.url !== '/' &&  _router.url !== '/login'  && _router.url !== '/register'"  [routerLink]="['/profile-tracker']">ARTISTS</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" *ngIf="_router.url !== '/' && _router.url !== '/login' && _router.url !== '/register'"  [routerLink]="['/content-analyser']">CONTENT</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" *ngIf="_router.url !== '/' && _router.url !== '/login' && _router.url !== '/register'" [routerLink]="['/superfans']">SUPER FANS</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" *ngIf="_router.url !== '/' && _router.url !== '/login' && _router.url !== '/register'"  [routerLink]="['/tour']">TOUR</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" *ngIf="_router.url !== '/' && _router.url !== '/login' && _router.url !== '/register'"  [routerLink]="['/7amp']">7AMP</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+

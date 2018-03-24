@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row h-75">
+    <div class="col-5 p-5 col-sm-5 col-md-5 col-lg-5 col-xl-5 mx-auto  my-auto rounded register">
+      <form #register="ngForm" (ngSubmit)="onSubmit(register.value)">
+        <label>username:</label>
+        <div class="form-group" [ngClass]="{ 'has-danger': username.invalid && (username.dirty || username.touched), 'has-success': username.valid && (username.dirty ||
+                username.touched)}">
+          <input #username='ngModel' type="text" required class="form-control" placeholder="enter username" [ngModel]="model.username" name="username">
+        </div>
+        <label>email:</label>
+        <div class="form-group" [ngClass]="{ 'has-danger': email.invalid && (email.dirty || email.touched), 'has-success': email.valid && (email.dirty ||
+        email.touched)}">
+          <input #email='ngModel' type="email" class="form-control" required  placeholder="enter email" [ngModel]="model.email" name="email">
+        </div>
+          <label>password:</label>
+          <div class="form-group">
+            <input type="password" class="form-control" name="password" [ngModel]="model.password" required validateEqual="confirmPassword" reverse="true" #password="ngModel">
+            <!-- <small [hidden]="password.valid || (password.pristine && !f.submitted)">
+              Password is required
+            </small> -->
+            </div>
+            <label>retype password:</label>
+            <div class="form-group">
+            <input type="password" class="form-control" name="confirmPassword" [ngModel]="model.confirmPassword" required validateEqual="password" #confirmPassword="ngModel">
+            <!-- <small [hidden]="confirmPassword.valid || (confirmPassword.pristine && !f.submitted)">
+              Password mismatch
+            </small> -->
+            </div>
+        <button type="submit" [disabled]="!register.form.valid" class="btn btn-primary float-right">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>

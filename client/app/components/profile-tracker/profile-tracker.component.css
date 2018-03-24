@@ -1,0 +1,72 @@
+.container{
+    height: 100%;
+}
+
+h2{
+    font-family:Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+.btn{
+    border:1px solid rgba(18,36,57,0.5);
+    background-color:rgba(18,36,57,0.1);
+    opacity: 0.8px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.search {
+  border: none;
+  outline: none;
+  padding: 10px;
+  width: 100%;
+  font-size:24px;
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+.search + span {
+  display: block;
+  border-bottom: solid 3px rgba(48, 48, 48, 0.8);
+  width: 0;
+  -webkit-transition: width 500ms ease-in-out;
+  transition: width 500ms ease-in-out;
+}
+.search:focus + span {
+  width: 110%;          /*  used calc first, but won't work on Edge  */
+  -webkit-transition: width 500ms ease-in-out;
+  transition: width 500ms ease-in-out;
+}
+
+.profile{
+    border:3px solid rgba(48, 48, 48, 0.6);
+}
+
+.profile:hover {
+    border:3px solid rgba(227, 71, 153,0.5);
+}
+
+.dash-back{
+    width: 100%;
+    height: 100%;
+        position: fixed;
+        top: 0%;
+        left:0%;
+    z-index: 1;
+    background-color: rgba(211,211,211, 0.8);
+}
+
+.btn-exit{
+    color:white;
+    border:3px solid rgba(227, 71, 153,0.1);
+}
+
+.btn-exit:focus{
+    border:3px solid rgba(227, 71, 153,0.5);
+}
+
+.btn-exit:hover{
+    border:3px solid rgba(227, 71, 153,0.5);
+}
+
+.add{
+    width:64px;
+    height: 64px;
+}

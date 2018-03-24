@@ -1,0 +1,59 @@
+<div class="row w-75 dashboard mx-auto rounded">
+  <div class="col-lg-2 col-xl-2 sidebar p-4  mt-2 ">
+    <li *ngFor="let pageUrl of pagesUrl | FilterPipe:queryProfile ;let i = index">
+      <img *ngIf="i < 5" (click)="openDetail(i)" [src]="pageUrl.src" class="rounded-circle p-2" alt="">
+    </li>
+  </div>
+  <div class="col-lg-6 col-xl-6">
+    <div class="row basic p-4 mt-5">
+      <div class="col-lg-4 col-xl-4 p-0">
+        <img class="rounded-circle p-2" [src]="selected.src">
+      </div>
+      <div class="col-lg-4 col-xl-4 p-0">
+        <div class="row">
+          <div class="col-lg-12 col-xl-12 mt-2">
+            <p class="h2 m-0">Engagements</p>
+          </div>
+          <div class="col-lg-12 col-xl-12">
+            <span>FACEBOOK // LAST 7 DAYS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+        <div class="row">
+          <div class="col-lg-4 col-xl-4">
+            <p class="h1"><b>300k</b></p>
+            <p class="h6">TOTAL ENGAGEMENTS</p>
+          </div>
+          <div class="col-lg-4 col-xl-4">
+            <p class="h1"><b>40</b></p>
+            <p class="h6">TOTAL POSTS</p>
+          </div>
+          <div class="col-lg-4 col-xl-4">
+            <p class="h1"><b>7k</b></p>
+            <p class="h6">AVERAGE NUM.ENGAGEMENTS PER POST</p>
+          </div>
+          <div class="col-lg-4 col-xl-4">
+            <p class="h1"><b>5k</b></p>
+            <p class="h6">TOTAL COMMENTS</p>
+          </div>
+          <div class="col-lg-4 col-xl-4">
+            <p class="h1"><b>290k</b></p>
+            <p class="h6">TOTAL REACTIONS</p>
+          </div>
+          <div class="col-lg-4 col-xl-4">
+            <p class="h1"><b>5k</b></p>
+            <p class="h6">TOTAL SHARES</p>
+        </div>
+      </div>
+      <div class="row mt-5">
+        <div class="col-lg-8 col-xl-8 mx-auto">
+          <app-content-graph></app-content-graph>
+        </div>
+      </div>
+      </div>
+      <div class="col-lg-4 col-xl-4 my-auto">
+        <p class="text-center mx-auto" style="font-size:10px;">MOST ENGAGING POST</p>
+        <div class='fb-post col-lg-12 col-xl-12 ' data-href="https://www.facebook.com/RitaOra/posts/10155403896933601" data-width='350'></div>
+      </div>
+</div>

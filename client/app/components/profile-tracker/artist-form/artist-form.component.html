@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-lg-6 col-xl-6 mx-auto my-auto">
+      <form #artists="ngForm" class="mb-5" (ngSubmit)="onSubmit(artists.value)">
+        <fieldset>
+          <!-- facebook input-->
+          <div class="form-group">
+            <label class="col-md-3 control-label" for="name">Facebook</label>
+            <div class="col-md-9">
+              <input [ngClass]="{ 'has-danger': face.invalid && (face.dirty || face.touched), 'has-success': face.valid && (face.dirty || face.touched)}"
+                type="text" class="form-control" required (ngModel)="this.face" name="face" placeholder="facebook user" #face="ngModel">
+            </div>
+          </div>
+          <!-- facebook input-->
+          <div class="form-group">
+            <label class="col-md-3 control-label" for="name">Instagram</label>
+            <div class="col-md-9">
+              <input [ngClass]="{ 'has-danger': ins.invalid && (ins.dirty || ins.touched), 'has-success': ins.valid && (ins.dirty || ins.touched)}"
+                type="text" class="form-control" required (ngModel)="ins" name="ins" placeholder="instagram user" #ins="ngModel">
+            </div>
+          </div>
+          <!-- facebook input-->
+          <div class="form-group">
+            <label class="col-md-3 control-label" for="name">Twitter</label>
+            <div class="col-md-9">
+              <input [ngClass]="{ 'has-danger': twit.invalid && (twit.dirty || twit.touched), 'has-success': twit.valid && (twit.dirty || twit.touched)}"
+                type="text" class="form-control" required (ngModel)="twit" name="twit" placeholder="twitter user" #twit="ngModel">
+            </div>
+          </div>
+          <!-- facebook input-->
+          <div class="form-group">
+            <label class="col-md-3 control-label" for="name">Youtube</label>
+            <div class="col-md-9">
+              <input [ngClass]="{ 'has-danger': youtu.invalid && (youtu.dirty || youtu.touched), 'has-success': youtu.valid && (youtu.dirty || youtu.touched)}"
+                type="text" class="form-control" required (ngModel)="youtu" name="youtu" placeholder="youtube user" #youtu="ngModel">
+            </div>
+          </div>
+                    <!-- facebook input-->
+          <div class="form-group">
+            <label class="col-md-3 control-label" for="name">Spotify</label>
+            <div class="col-md-9">
+              <input [ngClass]="{ 'has-danger': spot.invalid && (spot.dirty || spot.touched), 'has-success': spot.valid && (spot.dirty || spot.touched)}"
+                type="text" class="form-control" required (ngModel)="spot" name="spot" placeholder="user spotify" #spot="ngModel">
+            </div>
+          </div>    
+          <!-- Form actions -->
+          <div class="form-group">
+            <div class="col-md-12 text-right mr-5">
+              <button type="submit" [disabled]="!artists.form.valid" class="btn btn-lg float-right">Submit</button>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>

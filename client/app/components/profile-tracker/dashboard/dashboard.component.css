@@ -1,0 +1,51 @@
+.dashboard{
+    background-color:rgb(18,36,57);
+    color:white;
+    border-radius: 15px;
+    height: 90%;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.sidebar img {
+    width: 120px;
+    height: 120px;
+    margin: auto;    
+    display: block;
+}
+
+.sidebar input {
+   display: block;
+   margin:auto;
+   width: 90%;
+   height: 30px;
+   -webkit-border-radius:5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+   border:none;
+   padding: 10px;
+}
+
+input:focus{
+    border:none;
+}
+
+.basic{
+    background-color:rgb(18,36,57);
+    border-radius: 15px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.basic img{
+    width: 150px;
+    height: 150px;
+}
+
+li{list-style-type:none;}
+
+.stats p{
+  color:white;
+  font-size:14px;
+}
+

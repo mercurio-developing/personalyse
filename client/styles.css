@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('/assets/fonts/HelveticaNeue.ttf') format('truetype'),
+}
+
+body{
+    height: 100%;
+    width: 100%;
+    overflow-x:hidden;
+}

@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row h-75">
+    <div class="col-5 p-5 col-sm-5 col-md-5 col-lg-5 col-xl-5 mx-auto  my-auto rounded login">      
+      <form #login="ngForm" (ngSubmit)="onSubmit(login.value)">
+        <label>Email address</label>
+        <div class="form-group" [ngClass]="{ 'has-danger': email.invalid && (email.dirty || email.touched), 'has-success': email.valid && (email.dirty ||
+        email.touched)}" >
+          <input #email='ngModel' type="email" class="form-control" required  placeholder="Enter email" [(ngModel)]="this.mail" name="email">
+        </div>
+        <label>Password</label>
+        <div class="form-group" [ngClass]="{ 'has-danger': pass.invalid && (pass.dirty || pass.touched), 'has-success': pass.valid && (pass.dirty ||
+        pass.touched)}" >
+          <input #pass='ngModel' type="password" required class="form-control" placeholder="Password" [(ngModel)]="this.password" name="password">
+        </div>
+        <button type="submit" [disabled]="!login.form.valid" class="btn btn-primary float-right">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>

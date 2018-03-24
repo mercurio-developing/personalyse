@@ -1,0 +1,103 @@
+<div class="row mt-5">
+  <div class="col-lg-6 col-xl-6 float-left">
+    <p class="display-3 ml-2">Content Analyser</p>
+  
+  </div>
+  <div class="col-lg-6 col-xl-6 mt-4 text-center">
+        <img class="fbIcon" src="assets/icons/FBgrad100px.png" alt="">
+  </div>
+</div>
+<div class="container mb-3">
+  <span class="last7 time" [class.active]="last7Active === true" (click)="last30Active = !last30Active;last7Active = !last7Active;">LAST 7 DAYS</span>
+  <span> // </span>
+  <span class="last30 time" [class.active]="last30Active === true" (click)="last30Active = !last30Active;last7Active = !last7Active;">LAST 30 DAYS</span>
+ <div class="row">
+   <div class="col-lg-6 col-xl-6">
+     <div class="separator p-0"></div>
+     <div class="row m-0 p-4 add-row">
+     <div class="col-lg-4 col-xl-4 p-0">
+      <img class="add" (click)="addUrl(this.faceUrl.viewModel)" src="assets/icons/icon_plus.svg" alt="">
+     </div>
+      <div class="col-lg-8  col-xl-8 mx-auto my-auto">
+         <input type="text" (ngModel)="faceUrl" name="faceUrl" #faceUrl="ngModel" class="text-center w-75" placeholder="Enter Facebook Page Url">        
+     </div>
+     </div>
+     <div class="row m-0 mt-1 add-row m-0 p-4 " *ngFor="let page of pagesUrl;let i = index;">
+       <div class="col-lg-3 col-xl-3 p-0 content">
+          <div class="content_img text-center" (click)="openDash(i)">
+          <img [src]="page.src" class="add rounded-circle"  alt="">
+          <div>Centered</div>
+          </div>
+      </div>
+      <div class="col-lg-3 col-xl-3 text-center stats">
+        <p class="h1">
+          <b>300k</b>
+        </p>
+        <p class="h6">TOTAL ENGAGEMENTS</p>
+      </div>
+      <div class="col-lg-3 col-xl-3 text-center stats">
+          <p class="h1">
+            <b>-35%</b>
+          </p>
+          <p class="h6">COMPARED TO PREVIOUS PERIOD</p>
+      </div>
+      <div class="col-lg-3 col-xl-3 text-center stats">
+        <p class="h1">
+          <b>0.4%</b>
+        </p>
+        <p class="h6">TOTAL AUDIENCE ENGAGED</p>
+      </div>
+     </div>
+   </div>
+   <div class="col-lg-6 col-xl-6 pl-1">
+     <div class="row r-row ">
+        <div class="col-lg-6 col-xl-6  text-center top p-0" [ngClass]="{'selec': isSelec2,'unselec': !isSelec2 }" (click)="insig()">
+          <span>INSIGHTS</span>
+        </div>
+        <div class="col-lg-6 col-xl-6  text-center top p-0" [ngClass]="{'selec': isSelec,'unselec': !isSelec }" (click)="top()">
+          <span>TOP POSTS</span>
+        </div>
+        <div class="row mt-2 scroll" *ngIf="isSelec2 === true">
+          <div class="col-lg-12 col-xl-12 mb-2">
+            <div class="card">
+              <div class="card-body p-5 w-75 text-center mx-auto">
+                <h2 class="card-title text-center">High Performer</h2>
+                <p class="card-text">This month Ed Sheeran had the highest number of engagements on Facebook, with 259,655 engagements in total. This was 50%
+                more than the average for the rest of this cluster, but 3.6 times lower than last month . Why? We've calculated this is largely
+                due to the page posting a lot, as well as the large following the page has.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-12 col-xl-12 mb-2">
+            <div class="card">
+              <div class="card-body p-5 w-75 text-center mx-auto">
+                <h2 class="card-title text-center">Time of Day</h2>
+                <p class="card-text">This month the top day to post was Thursday. Posts made during this window generated 2.17 many times more engagement than
+                the average for the rest of the month . Who's doing it well? Increased posting frequency during this key window has driven
+                great engagement for Ed Sheeran, Madonna, and Maná.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-12 col-xl-12 mb-2">
+            <div class="card">
+              <div class="card-body p-5 w-75 text-center mx-auto">
+                <h2 class="card-title text-center">Content</h2>
+                <p class="card-text">Video posts have been the hero this month driving 0.06 times more engagements than posts. Who's doing it well? Ed Sheeran
+                has been making the most of this, ensuring 33% of posts are videos and seeing a 2.6x lift in engagement on these posts. Madonna,
+                and Maná could benefit from using more video content. Click on any of the pages on the left hand side of the page to see
+                the full content breakdown.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-2 w-100" *ngIf="isSelec === true">
+            <app-top-posts class="mx-auto"></app-top-posts>
+        </div>
+     </div>
+   </div>
+ </div>
+</div>
+<div class="container-fluid dash-back " *ngIf="this.enableDash === true ">
+  <button class="btn mt-2 btn-exit" (click)="enableDash = false">X</button>
+  <app-content-dashboard [pagesUrl]="this.pagesUrl" [selected]="this.artist"></app-content-dashboard>
+</div>

@@ -1,0 +1,42 @@
+<div class="row mt-5">
+  <div *ngIf="this.showForm === false" class="col-lg-6 col-xl-6 float-left">
+    <p class="display-3 ml-5">Profile Tracker</p>
+  </div>
+    <div *ngIf="this.showForm === true" class="col-lg-6 col-xl-6 float-left">
+      <p class="display-3 ml-5">Add Profile</p>
+    </div>
+</div>
+<div class="container">
+  <div class="row h-25" *ngIf="this.showForm === false">
+      <div class="col-lg-10 col-xl-10 mx-auto my-auto w-50 d-inline">
+          <input type="text" [(ngModel)]="queryProfile" name="profile" placeholder="Search for a profile" class="w-75 search">
+          <span></span>
+      </div>
+      <div class="col-lg-2  col-xl-2 mx-auto my-auto">
+        <!-- <button class="btn m-1 rounded-circle"> -->
+          <img  class="add mb-3" (click)="add()" src="assets/icons/icon_plus.svg" alt="">
+        <!-- </button> -->
+      <!-- <button class="btn m-1" (click)="spot()">
+        </button> -->
+      </div>
+</div>
+  <div class="row">
+      <div class="col-lg-10 col-xl-10 mx-auto my-auto" *ngIf="this.showForm === true">
+        <app-artist-form (updateProfile)="newProfile($event)"></app-artist-form>
+        <button class="btn m-1 rounded-circle" (click)="add()">back</button>
+      </div>
+      <div class="col-lg-10 col-xl-10 mx-auto my-auto" *ngIf="this.spotForm === true">
+        <app-spot-form (updateSpot)="newList($event)"></app-spot-form>
+        <button class="btn m-1 rounded-circle" (click)="spot()">back</button>
+      </div>
+  </div>
+  <div class="row mt-2" *ngIf="this.showForm === false">
+    <div *ngFor="let profile of profiles | FilterPipe: queryProfile ;let i = index" class="col-lg-3 col-xl-3 ">
+        <img (click)="openDash(i)" [src]="profile.src" class="img-thumbnail profile" alt="">
+    </div>
+  </div>
+</div>
+<div class="container-fluid dash-back " *ngIf="this.enableDash === true ">
+  <button class="btn mt-2 btn-exit" (click)="enableDash = false">X</button>
+  <app-dashboard [profiles]="this.profiles" [selected]="this.artist"></app-dashboard>
+</div>

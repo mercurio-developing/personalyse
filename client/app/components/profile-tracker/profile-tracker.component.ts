@@ -20,8 +20,7 @@ export class ProfileTrackerComponent implements OnInit {
   showForm;
   spotForm;
 
-  constructor(private tracker: TrackerService) {
-  }
+  constructor(private tracker: TrackerService) {}
 
   ngOnInit() {
     this.tracker.getProfile().subscribe(data => {

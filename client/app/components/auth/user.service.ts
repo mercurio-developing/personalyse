@@ -1,12 +1,24 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environmentDev } from '../../../environments/environment';
+import { environmentProd } from '../../../environments/environment.prod';
+import { isDevMode } from '@angular/core';
 
 @Injectable()
 export class UserService {
-  constructor(private http: HttpClient) { }
+
+  serverUrl;
+
+  constructor(private http: HttpClient) { 
+    if (isDevMode()) {
+      this.serverUrl = environmentDev.server;
+    } else {
+      this.serverUrl = environmentProd.server;
+    }
+  }
 
   getAll() {
-    return this.http.get('http://localhost:3000/user/register');
+    return this.http.get(this.serverUrl+'user/register');
   }
 
   // getById(_id: string) {
@@ -14,7 +26,7 @@ export class UserService {
   // }
 
   create(user) {
-    return this.http.post('http://localhost:3000/user/register', user);
+    return this.http.post(this.serverUrl +'user/register', user);
   }
 
   // update(user: User) {

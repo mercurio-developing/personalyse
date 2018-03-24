@@ -35,7 +35,7 @@ app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-app.use(express.static(__dirname + '/client'));
+app.use(express.static(__dirname + '/dist'));
 
 app.use('/user',userRoutes);
 app.use('/user/profiles', profileRoutes);

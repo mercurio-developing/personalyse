@@ -37,11 +37,11 @@ export class TrackerService {
 
   sendUrlSpot(dataUrl) {
     // return this.http.post('http://localhost:3000/api/spotify/playlist/', { id: dataUrl.id, artist: dataUrl.artist });
-    return this.http.post(this.serverUrl+'/api/spotify/playlist/save', { id: dataUrl.playlist, user: dataUrl.user });
+    return this.http.post(this.serverUrl+'api/spotify/playlist/save', { id: dataUrl.playlist, user: dataUrl.user });
   }
 
   sendUrls(url){
-    return this.http.post(this.serverUrl+'/api/facebook/profile', { id: url.face })
+    return this.http.post(this.serverUrl+'api/facebook/profile', { id: url.face })
   }
 
   saveProfile(artist){

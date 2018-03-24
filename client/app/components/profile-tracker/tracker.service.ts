@@ -5,7 +5,6 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import 'rxjs/add/observable/forkJoin';
 import 'rxjs/add/operator/map';
 import { environmentProd } from '../../../environments/environment.prod';
-import { environmentDev } from '../../../environments/environment';
 
 import { isDevMode } from '@angular/core';
 
@@ -17,10 +16,10 @@ export class TrackerService {
   errors;
   facebook: any;
   serverUrl;
-  
+
   constructor(private http: HttpClient) {
       if (isDevMode()) {
-        this.serverUrl = environmentDev.server;
+        this.serverUrl = 'http://localhost:3000/';
       } else {
         this.serverUrl = environmentProd.server;
       }

@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { environmentDev } from '../../../environments/environment';
 import { environmentProd } from '../../../environments/environment.prod';
 import { isDevMode } from '@angular/core';
 
@@ -11,7 +10,7 @@ export class UserService {
 
   constructor(private http: HttpClient) { 
     if (isDevMode()) {
-      this.serverUrl = environmentDev.server;
+      this.serverUrl = 'http://localhost:3000/';
     } else {
       this.serverUrl = environmentProd.server;
     }

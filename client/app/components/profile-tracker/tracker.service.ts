@@ -50,10 +50,10 @@ export class TrackerService {
 
   saveApi(data) {
     return Observable.forkJoin(
-      this.http.post(this.serverUrl+'facebook/save', { id: data.urls[0] }),
-      this.http.post(this.serverUrl+'instagram/save', { id: data.urls[1], artistId: data.artistId }),
-      this.http.post(this.serverUrl+'twitter/save', { id: data.urls[2], artistId: data.artistId }),
-      this.http.post(this.serverUrl+'youtube/save', { id: data.urls[3], artistId:data.artistId }),
-      this.http.post(this.serverUrl+'spotify/save', { id: data.urls[4], artistId: data.artistId })
+      this.http.post(this.serverUrl+'api/facebook/save', { id: data.urls[0] }),
+      this.http.post(this.serverUrl+'api/instagram/save', { id: data.urls[1], artistId: data.artistId }),
+      this.http.post(this.serverUrl+'api/twitter/save', { id: data.urls[2], artistId: data.artistId }),
+      this.http.post(this.serverUrl+'api/youtube/save', { id: data.urls[3], artistId:data.artistId }),
+      this.http.post(this.serverUrl+'api/spotify/save', { id: data.urls[4], artistId: data.artistId })
     )}
 }

@@ -22,6 +22,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 app.use('/', express.static('client'));
+
 app.use('/user',userRoutes);
 app.use('/user/profiles', profileRoutes);
 app.use('/api/facebook', facebookRoutes);
@@ -33,7 +34,6 @@ app.use('/api/spotify', spotifyRoutes);
 require('./db');
 // require('./cron')
 
-app.use(express.static(__dirname + '/client'));
 
 app.listen(port, function () {
     console.log("Express Started on Port 3000");

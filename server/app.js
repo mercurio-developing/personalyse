@@ -33,6 +33,8 @@ app.use('/api/spotify', spotifyRoutes);
 require('./db');
 // require('./cron')
 
+app.use('/', express.static('client'));
+
 app.listen(port, function () {
     console.log("Express Started on Port 3000");
 });

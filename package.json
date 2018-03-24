@@ -10,7 +10,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "postinstall": "ng build --prod --aot=false",
-    "start": "/server/node app.js"
+    "start": "node ./server/app.js"
   },
   "engines": {
     "node": "~8.9.4",

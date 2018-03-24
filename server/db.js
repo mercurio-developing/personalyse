@@ -20,7 +20,7 @@ const data = require('./data/data.js');
 
 mongoose.Promise = require('bluebird');
 
-mongoose.connect(config.mlab || config.database, function (err) {
+mongoose.connect(process.env.MONGODB_URI || config.database, function (err) {
     if (err) {
         console.log('Failed connecting to MongoDB!');
     } else {

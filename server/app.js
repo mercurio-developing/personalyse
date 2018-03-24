@@ -50,7 +50,9 @@ app.use('/api/spotify', spotifyRoutes);
 
 require('./db');
 // require('./cron')
-
+app.get('*', function (req, res) {
+    res.sendFile(__dirname + '/client/index.html'); // load the single view file (angular will handle the page changes on the front-end)
+});
 
 app.listen(port, function () {
     console.log("Express Started on Port 3000");

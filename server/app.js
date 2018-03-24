@@ -40,11 +40,6 @@ app.use(bodyParser.json())
 
 app.use(express.static(path.join(__dirname, 'client')));
 
-app.get('*', function (req, res) {
-    const index = path.join(__dirname, 'client', 'index.html');
-    res.sendFile(index);
-});
-
 app.use('/user',userRoutes);
 app.use('/user/profiles', profileRoutes);
 app.use('/api/facebook', facebookRoutes);

@@ -20,8 +20,13 @@ const data = require('./data/data.js');
 
 mongoose.Promise = require('bluebird');
 
-mongoose.connect(config.database)
-
+mongoose.connect(process.env.MONGODB_URI || config.database, function (err) {
+    if (err) {
+        console.log('Failed connecting to MongoDB!');
+    } else {
+        console.log('Successfully connected to MongoDB!');
+    }
+});
 //Get the default connection
 var db = mongoose.connection;
 const Schema = mongoose.Schema,

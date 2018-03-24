@@ -15,7 +15,7 @@ cfg.spotify = {
         };
 cfg.youtube = {
         version: 'v3',
-        auth: 'AIzaSyCBclG9UcA1l5o4N2yGlqDW2g4fHdh'
+        auth: 'AIzaSyCBclG9UcA1l5o4N2yGlqDW2g4fHdhAfM8'
         };
 cfg.facebook = {
         version: 'v2.4',

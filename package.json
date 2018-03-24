@@ -2,7 +2,7 @@
   "name": "personalyse",
   "version": "0.0.0",
   "license": "MIT",
-  "main": "/server/app.js",
+  "main": "./server/app.js",
   "scripts": {
     "ng": "ng",
     "build": "ng build --prod",

@@ -1,5 +1,5 @@
 module.exports = {
   database:'mongodb://127.0.0.1/personalyse',
-  mongodb:'//aaronjsayer@gmail.com:P3rsonalyse!@ds121289.mlab.com:21289/heroku_mcsj50t8',
+  mongodb:'mongodb://heroku_mcsj50t8:ua3pial1i6u7rnq3pub5imkik8@ds121289.mlab.com:21289/heroku_mcsj50t8',
   key: 'mySeCret'
 }

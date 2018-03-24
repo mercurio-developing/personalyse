@@ -38,7 +38,7 @@ app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-app.use(express.static(path.join(__dirname, 'client')));
+app.use('/', express.static('client'));
 
 app.use('/user',userRoutes);
 app.use('/user/profiles', profileRoutes);
@@ -50,10 +50,6 @@ app.use('/api/spotify', spotifyRoutes);
 
 require('./db');
 // require('./cron')
-app.get('*', function (req, res) {
-    res.sendFile(__dirname + '/client/index.html'); // load the single view file (angular will handle the page changes on the front-end)
-});
-
 app.listen(port, function () {
     console.log("Express Started on Port 3000");
 });

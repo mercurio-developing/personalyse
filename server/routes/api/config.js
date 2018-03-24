@@ -2,20 +2,20 @@
 const cfg = {}
 
 cfg.twitter = {
-        consumer_key: 'WxczGDLkolhQ5Gztl9rnIayM7',
-        consumer_secret: 'lMAMe9J3cceVUgkQmreDI8ZBlCYAZtF29BRol1lUEeFLOApN1E',
+        consumer_key: '2zPoq4KKykboKd6AUVMLm7WuN',
+        consumer_secret: 'xP2qWEnjukBptfENMmMV575h4VkFDUltbMEFK4VOfrRTVhEbQo',
         access_token: '865783707138916352-ltiAE4MlJOUfd0AxZ1CwgxZCh1EMpZW',
         access_token_secret: 'BBq69CUJ9gVqm2p7zuLXv2pCG6S981mHtDOzqgDSszUft',
         };
 
 cfg.spotify = {
-        clientId: '9e75b71e6f20412a8c134f2cbd44b0ec',
-        clientSecret: 'e56c38b8584a4516bd4999f6b0549a5c',
+        clientId: '913eea50433d453aa48f4615d82e98eb',
+        clientSecret: '0d2e38bbdf9140479a64a8cfec0820e7',
         redirectUri: 'http://localhost:3000/',
         };
 cfg.youtube = {
         version: 'v3',
-        auth: 'AIzaSyAAMj5n7XV3tEeCID - 75qjHOb5ZKtHNFgE'
+        auth: 'AIzaSyCBclG9UcA1l5o4N2yGlqDW2g4fHdh'
         };
 cfg.facebook = {
         version: 'v2.4',

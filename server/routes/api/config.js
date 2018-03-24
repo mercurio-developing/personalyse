@@ -4,8 +4,8 @@ const cfg = {}
 cfg.twitter = {
         consumer_key: '2zPoq4KKykboKd6AUVMLm7WuN',
         consumer_secret: 'xP2qWEnjukBptfENMmMV575h4VkFDUltbMEFK4VOfrRTVhEbQo',
-        access_token: '865783707138916352-ltiAE4MlJOUfd0AxZ1CwgxZCh1EMpZW',
-        access_token_secret: 'BBq69CUJ9gVqm2p7zuLXv2pCG6S981mHtDOzqgDSszUft',
+        access_token: '61038260-IM24gf9hDib1ELz3RmgvXfXhbsFB4qGemMxg1OUoZ',
+        access_token_secret: '1EHtcxrQKBSC4jvQxOz6cBSuDzlLE9eydzbP2PiFWg84q',
         };
 
 cfg.spotify = {

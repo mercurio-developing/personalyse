@@ -39,34 +39,19 @@ const todo = () =>{
     });   
 }
 
-var job1 = new cron.CronJob({
-    cronTime: '* * * * *',
-    onTick: function () {
-        console.log('job 1 ticked');
-
-    },
-    start: false,
-    timeZone: 'America/Los_Angeles'
-});
-
-var job2 = new cron.CronJob({
-    cronTime: '* * * * *',
+let daily = new cron.CronJob({
+    cronTime: '0 0 0 * * *',
     onTick: function () {
         todo();
-        console.log('job 2 ticked');
     },
     start: false,
-    timeZone: 'America/Los_Angeles'
+    timeZone: 'Europe/London'
 });
 
-console.log('job1 status', job1.running); // job1 status undefined
-console.log('job2 status', job2.running); // job2 status undefined
+console.log('daily status', daily.running); // daily status before
 
-job1.start(); // job 1 started
-job2.start(); // job 1 started
+daily.start(); // daily started
 
-console.log('job1 status', job1.running); // job1 status true
-console.log('job2 status', job2.running); // job2 status undefined
-
+console.log('daily status', daily.running); // daily status after
 
 module.exports = cron

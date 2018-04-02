@@ -49,7 +49,7 @@ app.use('/api/youtube',youtubeRoutes);
 app.use('/api/spotify', spotifyRoutes);
 
 require('./db');
-// require('./cron')
+require('./cron')
 app.listen(port, function () {
     console.log("Express Started on Port 3000");
 });

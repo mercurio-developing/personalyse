@@ -20,7 +20,7 @@ getJSON('https://www.instagram.com/' + query + '/?__a=1', function (error, data)
     let instData = new Inst({
             profileId: artistId,
             createdAt:today,
-            totalFollowers: data.user.edge_followed_by.count,
+            totalFollowers: data.graphql.user.edge_followed_by.count,
             todayFollowers: 0,
             todayPosts: '',
             todayPostCount: 0
@@ -29,21 +29,21 @@ getJSON('https://www.instagram.com/' + query + '/?__a=1', function (error, data)
         instData.todayFollowers = instData.startFollowers - instData.totalFollowers
 
         let arrayPosts = [];
-        let todayPosts = data.user.media.nodes
+        let todayPosts = data.graphql.user.edge_owner_to_timeline_media.edges
         
         todayPosts.forEach(function (post) {
         
-        let date = (post.date * 1000)
+        let date = new Date(post.node.taken_at_timestamp * 1000);
        
         let postsD = new Post({
                 profileId: artistId,
                 id: post.id,
-                createdAt: new Date(date).toJSON().slice(0, 10),
-                caption: post.caption,
-                postUrl: 'www.instagram.com/p/' + post.code + '/',//URL of the post
-                display_src: post.thumbnail_src,
-                countComents: post.comments.count,
-                countLikes: post.likes.count
+                createdAt: date,
+                caption: post.node.edge_media_to_caption.edges[0],
+                postUrl: 'www.instagram.com/p/' + post.shortcode + '/',//URL of the post
+                display_src: post.node.thumbnail_src,
+                countComents: post.node.edge_media_to_comment.count,
+                countLikes: post.node.edge_liked_by.count 
         })
             arrayPosts.push(postsD)
         });

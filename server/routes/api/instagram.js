@@ -42,7 +42,7 @@ router.post('/save', function (req, res) {
     let arrayPosts = [];
     
     todayPosts.forEach(function (post) {
-        let date = new Date(post.taken_at_timestamp * 1000);
+        let date = new Date(post.node.taken_at_timestamp * 1000);
         let postsD = new instPost({
             profileId: artistId,
             id: post.node.id,

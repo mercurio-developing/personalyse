@@ -20,8 +20,11 @@ export class TrackerService {
   constructor(private http: HttpClient) {
       if (isDevMode()) {
         this.serverUrl = 'http://localhost:3000/';
+        console.log('dev')
       } else {
-        this.serverUrl = environmentProd.server;
+        this.serverUrl = 'http://localhost:3000/';
+
+        // this.serverUrl = environmentProd.server;
       }
   }
 

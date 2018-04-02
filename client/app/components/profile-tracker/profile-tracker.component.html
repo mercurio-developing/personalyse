@@ -32,7 +32,7 @@
   </div>
   <div class="row mt-2" *ngIf="this.showForm === false">
     <div *ngFor="let profile of profiles | FilterPipe: queryProfile ;let i = index" class="col-lg-3 col-xl-3 ">
-        <img (click)="openDash(i)" [src]="profile.src" class="img-thumbnail profile" alt="">
+        <img (click)="openDash(i)" [src]="profile.src" class="img-thumbnail profile mt-4" alt="">
     </div>
   </div>
 </div>

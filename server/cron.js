@@ -13,7 +13,6 @@ const todoSpotM = require('./todo/todoSpotM.js');
 const todoVideo = require('./todo/todoVideo.js');
 const todoPlaylist = require('./todo/todoPlaylist.js');
 
-
 const Profile = require("./models/profile");
 
 const cron = require('cron');

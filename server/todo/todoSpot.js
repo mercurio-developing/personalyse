@@ -9,7 +9,8 @@ const Profile = require("../models/profile");
     
 const SpotifyWebApi = require('spotify-web-api-node');
 
-const cfg = require('../routes/api/config/config.js')
+const cfg = require('../routes/api/config');
+
 // credentials are optional
 const spotifyApi = new SpotifyWebApi({
     clientId: cfg.spotify.clientId,

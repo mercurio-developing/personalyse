@@ -34,8 +34,6 @@ app.use('/api/spotify', spotifyRoutes);
 
 require('./db');
 
-// require('./cron')
-// require('./herokuCron')
 
 herokuCron
 app.listen(port, function () {

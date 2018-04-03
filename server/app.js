@@ -33,6 +33,7 @@ app.use('/api/youtube',youtubeRoutes);
 app.use('/api/spotify', spotifyRoutes);
 
 require('./db');
+require('./heroku-cron');
 
 
 app.listen(port, function () {

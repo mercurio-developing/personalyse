@@ -34,8 +34,6 @@ app.use('/api/spotify', spotifyRoutes);
 
 require('./db');
 
-
-herokuCron
 app.listen(port, function () {
     console.log("Express Started on Port 3000");
 });

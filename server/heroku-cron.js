@@ -15,6 +15,7 @@ const todoPlaylist = require('./todo/todoPlaylist.js');
 const Profile = require("./models/profile");
 
 const todo = () => {
+    console.log('running todo!')
     let profilesArray;
     Profile.find({})
         .exec(function (err, profiles) {
@@ -37,4 +38,3 @@ const todo = () => {
 
 todo();
 
-module.exports = herokuCron

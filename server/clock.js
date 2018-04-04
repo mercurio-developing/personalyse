@@ -8,4 +8,4 @@ var job = new CronJob({
     timeZone: "America/Los_Angeles"
 });
 
-job.todo();
+job.start();

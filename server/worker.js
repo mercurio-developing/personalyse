@@ -33,5 +33,5 @@ module.exports = {
                     todoSpot(profile.urls[4], profile.artistId)
                 });
             });
-    };
+    }
 };

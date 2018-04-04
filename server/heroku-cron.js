@@ -14,7 +14,6 @@ const todoPlaylist = require('./todo/todoPlaylist.js');
 
 const Profile = require("./models/profile");
 
-const todo = () => {
     console.log('running todo!')
     let profilesArray;
     Profile.find({})
@@ -35,7 +34,5 @@ const todo = () => {
                 // todoSpotM(profile.urls[4], profile.artistId);
             });
         });
-}
 
-todo();
 

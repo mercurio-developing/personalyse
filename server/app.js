@@ -33,7 +33,10 @@ app.use('/api/youtube',youtubeRoutes);
 app.use('/api/spotify', spotifyRoutes);
 
 require('./db');
-
+var CronJob = require('cron').CronJob;
+new CronJob('59 * * * * *', function () {
+    require('./heroku-cron')
+}, null, true, 'America/Los_Angeles');
 
 app.listen(port, function () {
     console.log("Express Started on Port 3000");

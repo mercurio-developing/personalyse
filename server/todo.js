@@ -1,4 +1,5 @@
 'use strict';
+const mongoose = require('mongoose')
 
 const todoFace = require('./todo/todoFace.js');
 const todoTwit = require('./todo/todoTwit.js');
@@ -11,6 +12,7 @@ const todoVideo = require('./todo/todoVideo.js');
 const todoPlaylist = require('./todo/todoPlaylist.js');
 
 const Profile = require("./models/profile");
+
 
 console.log('running from todo!')
 let profilesArray;

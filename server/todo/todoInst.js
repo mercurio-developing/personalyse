@@ -2,11 +2,12 @@
 
 const todosInsts = function (profile,artist) {
 
+const mongoose = require('mongoose');
+
 const getJSON = require('get-json')
 const Inst = require("../models/api/inst/inst");
 const Post = require("../models/api/inst/instPost");
 const Profile = require("../models/profile");
-const mongoose = require('mongoose');
 
 console.log('todo inst on!')
 

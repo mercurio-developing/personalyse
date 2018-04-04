@@ -33,19 +33,7 @@ app.use('/api/youtube',youtubeRoutes);
 app.use('/api/spotify', spotifyRoutes);
 
 require('./db');
-
-
-var CronJob = require('cron').CronJob;
-
-var dailyJob = new CronJob({
-    cronTime: '* * * * * *',
-    onTick: function () {
-        require('./todo')
-    },
-    start: false
-});
-
-dailyJob.start();
+require('./cron')
 
 app.listen(port, function () {
     console.log("Express Started on Port 3000");

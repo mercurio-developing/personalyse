@@ -89,7 +89,7 @@ let twitData = new Twit({
                 profile[0].save(function (err, newProfile) {
                     if (err) {
                         err.status = 400;
-                        return next(err)
+                        console.log(err)
                     }
                     console.log('twit daily done')
                 });

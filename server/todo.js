@@ -33,4 +33,3 @@ Profile.find({})
         });
     });
 
-module.exports = todo;

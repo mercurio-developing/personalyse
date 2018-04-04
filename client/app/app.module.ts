@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';  // replaces previous H
 
 //graph component
 import { ChartsModule } from 'ng2-charts';
+import { LoadingModule, ANIMATION_TYPES } from 'ngx-loading';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -50,8 +51,15 @@ import { TrackerGraphComponent } from './components/profile-tracker/tracker-grap
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ChartsModule 
-  ],
+    ChartsModule,
+    LoadingModule.forRoot({
+      animationType: ANIMATION_TYPES.wanderingCubes,
+      backdropBackgroundColour: 'rgba(0,0,0,0.1)',
+      backdropBorderRadius: '4px',
+      primaryColour: '#ffffff',
+      secondaryColour: '#ffffff',
+      tertiaryColour: '#ffffff'
+    })  ],
   providers: [
   ],
    bootstrap: [AppComponent]

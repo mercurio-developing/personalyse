@@ -1,4 +1,6 @@
 <div class="container">
+  <ngx-loading [show]="loading" [config]="{backdropBackgroundColour: 'rgba(255,255,255,1)', backdropBorderRadius: '50px', primaryColour: '#000', secondaryColour:
+  '#000', tertiaryColour: '#000'}"></ngx-loading>
   <div class="row mt-5">
     <div class="col-lg-6 col-xl-6 mx-auto my-auto">
       <form #artists="ngForm" class="mb-5" (ngSubmit)="onSubmit(artists.value)">

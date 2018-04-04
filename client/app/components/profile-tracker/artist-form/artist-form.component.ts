@@ -18,7 +18,7 @@ export interface Artist {
 
 
 export class ArtistFormComponent implements OnInit {
-  
+  public loading = false;
   profiles: Artist[] = [];
   profile;
   newArtist;
@@ -51,7 +51,7 @@ export class ArtistFormComponent implements OnInit {
       src: '',
       urls: [dataUrl.face, dataUrl.ins, dataUrl.twit, dataUrl.youtu, dataUrl.spot]
     } as Artist
-
+    this.loading = true;
     this.tracker.sendUrls(dataUrl).subscribe((data) => {
         let dato: any;
         dato = data;
@@ -62,11 +62,13 @@ export class ArtistFormComponent implements OnInit {
       },
       error => {
         this.errors = error;
+        this.loading = false;
       },
       () => {
         this.tracker.saveProfile(selecArtist).subscribe((data) => {
         this.tracker.saveApi(selecArtist).subscribe((data) => {
           window.location.reload();
+          this.loading = false;
         })
       })
     })

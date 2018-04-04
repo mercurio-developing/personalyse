@@ -48,6 +48,7 @@
     "mongoose-deep-populate": "^3.1.1",
     "mongoose-seed-db": "0.0.10",
     "ng2-charts": "^1.6.0",
+    "ngx-loading": "^1.0.14",
     "node-cron": "^1.2.1",
     "nodemon": "^1.17.2",
     "npm": "^5.8.0",

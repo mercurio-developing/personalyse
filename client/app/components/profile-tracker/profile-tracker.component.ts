@@ -19,13 +19,16 @@ export class ProfileTrackerComponent implements OnInit {
   artist;
   showForm;
   spotForm;
+  public loading = false;
 
   constructor(private tracker: TrackerService) {}
 
   ngOnInit() {
+    this.loading = true;
     this.tracker.getProfile().subscribe(data => {
       this.profiles = data
     })
+    this.loading = false;
     this.enableDash = false;
     this.showForm = false;
     this.spotForm = false;

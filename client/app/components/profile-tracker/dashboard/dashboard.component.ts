@@ -23,17 +23,16 @@ export class DashboardComponent implements OnInit {
   videos;
   basic;
   queryProfile;
+  public loading = false;
 
   constructor(private tracker:TrackerService) {
-    console.log(this.profiles)
    }
-  
+
   ngOnInit() {
-      console.log(this.selected, 'log from tracker service')
+      this.loading = true;
       let _id = this.selected._id
       this.tracker.getData(_id).subscribe(data => {
-      console.log(data,'from get data')
-      this.basic = data[0]
+      this.loading = false;
       this.fb = data[0].face[0]
       this.ins = data[0].inst[0] 
       this.tw = data[0].twit[0] 
@@ -43,19 +42,18 @@ export class DashboardComponent implements OnInit {
   }
 
   openDetail(i) {
+    this.loading = true;
     this.selected = this.profiles[i];
-    console.log(this.selected)
     let _id = this.selected._id
     let url = this.profiles[i].urls;
     let urls = this.tracker.getData(_id).subscribe(data => {
-      console.log(data)
+      this.loading = false;
       this.fb = data[0].face[0]
       this.ins = data[0].inst[0]
       this.tw = data[0].twit[0]
       this.you = data[0].you[0]
       this.sp = data[0].spot[0]
       this.videos = data[5];
-      console.log(this.fb)
     })
   }
   

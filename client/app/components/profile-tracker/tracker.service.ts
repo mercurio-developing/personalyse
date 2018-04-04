@@ -23,7 +23,7 @@ export class TrackerService {
         console.log('dev')
       } else {
         this.serverUrl = environmentProd.server;
-        // this.serverUrl = 'http://localhost:3000/';
+        // this.serverUrl = 'http://localhost:3000/'
 
       }
   }

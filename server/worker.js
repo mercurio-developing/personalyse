@@ -1,3 +1,17 @@
+const mongoose = require('mongoose')
+
+const todoFace = require('./todo/todoFace.js');
+const todoTwit = require('./todo/todoTwit.js');
+const todoInst = require('./todo/todoInst.js');
+const todoYou = require('./todo/todoYou.js');
+const todoSpot = require('./todo/todoSpot.js');
+const todoSpotM = require('./todo/todoSpotM.js');
+
+const todoVideo = require('./todo/todoVideo.js');
+const todoPlaylist = require('./todo/todoPlaylist.js');
+
+const Profile = require("./models/profile");
+
 module.exports = {
     todo: () => {
         console.log('running todo!')

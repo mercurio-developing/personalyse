@@ -38,10 +38,9 @@ require('./db');
 var CronJob = require('cron').CronJob;
 
 var dailyJob = new CronJob({
-    cronTime: '* * * * * *',
+    cronTime: '* */4 * * * *',
     onTick: function () {
-        // Do daily function
-        console.log('I get called 1 time a day.');
+        require('./todo')
     },
     start: false
 });

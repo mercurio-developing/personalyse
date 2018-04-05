@@ -27,9 +27,9 @@ export class ProfileTrackerComponent implements OnInit {
   ngOnInit() {
     this.loading = true;
     this.tracker.getProfile().subscribe(data => {
+      this.loading = false;
       this.profiles = data
     })
-    this.loading = false;
     this.enableDash = false;
     this.showForm = false;
     this.spotForm = false;

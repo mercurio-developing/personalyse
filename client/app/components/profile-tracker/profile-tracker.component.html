@@ -7,9 +7,10 @@
     </div>
 </div>
 <div class="container">
-    <ngx-loading [show]="loading" [config]="{backdropBackgroundColour: 'rgba(255,255,255,1)', backdropBorderRadius: '0px', primaryColour: '#000', secondaryColour:
-              '#000', tertiaryColour: '#000'}"></ngx-loading>
+<ngx-loading [show]="loading" [config]="{backdropBackgroundColour: 'rgba(255,255,255,0.1)', backdropBorderRadius: '0px', primaryColour: '#000', secondaryColour:
+                      '#000', tertiaryColour: '#000'}"></ngx-loading>
   <div class="row h-25" *ngIf="this.showForm === false">
+        
       <div class="col-lg-10 col-xl-10 mx-auto my-auto w-50 d-inline">
           <input type="text" [(ngModel)]="queryProfile" name="profile" placeholder="Search for a profile" class="w-75 search">
           <span></span>
@@ -33,6 +34,7 @@
       </div>
   </div>
   <div class="row mt-2" *ngIf="this.showForm === false">
+    
     <div *ngFor="let profile of profiles | FilterPipe: queryProfile ;let i = index" class="col-lg-3 col-xl-3 ">
         <img (click)="openDash(i)" [src]="profile.src" class="img-thumbnail profile mt-4" alt="">
     </div>
@@ -41,7 +43,7 @@
 <div class="container-fluid dash-back " *ngIf="this.enableDash === true ">
   <button class="btn mt-2 btn-exit" (click)="enableDash = false">X</button>
   <ngx-loading [show]="loadingDash" [config]="{
-        backdropBackgroundColour: 'rgb(18,36,57)',
+        backdropBackgroundColour: 'rgb(18,36,57,1)',
         backdropBorderRadius: '0px',
         primaryColour: '#fff',
         secondaryColour:'#fff', 

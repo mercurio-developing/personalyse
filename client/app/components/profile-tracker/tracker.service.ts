@@ -23,12 +23,8 @@ export class TrackerService {
         console.log('dev')
       } else {
         this.serverUrl = environmentProd.server;
-        // this.serverUrl = 'http://localhost:3000/'
-
       }
   }
-
-
 
   getProfile(){
     return this.http.get(this.serverUrl+'user/profiles');

@@ -1,4 +1,4 @@
-import { Component, OnInit,Input, AfterViewInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { TrackerService } from '../tracker.service';
 import { Http, Response, Headers, RequestOptions } from "@angular/http";
 import { Observable } from "rxjs/Rx";
@@ -11,7 +11,8 @@ import { FilterPipe } from '../../../pipes/filter.pipe';
   providers:[TrackerService]
 })
 export class DashboardComponent implements OnInit {
-  
+  @Output()
+  change: EventEmitter<boolean> = new EventEmitter<boolean>();
   @Input() profiles;
   @Input() selected;
   fb;
@@ -29,10 +30,9 @@ export class DashboardComponent implements OnInit {
    }
 
   ngOnInit() {
-      this.loading = true;
       let _id = this.selected._id
       this.tracker.getData(_id).subscribe(data => {
-      this.loading = false;
+      this.change.emit(false);      
       this.fb = data[0].face[0]
       this.ins = data[0].inst[0] 
       this.tw = data[0].twit[0] 

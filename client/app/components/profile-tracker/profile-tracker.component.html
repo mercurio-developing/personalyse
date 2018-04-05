@@ -33,7 +33,6 @@
       </div>
   </div>
   <div class="row mt-2" *ngIf="this.showForm === false">
-
     <div *ngFor="let profile of profiles | FilterPipe: queryProfile ;let i = index" class="col-lg-3 col-xl-3 ">
         <img (click)="openDash(i)" [src]="profile.src" class="img-thumbnail profile mt-4" alt="">
     </div>
@@ -41,5 +40,14 @@
 </div>
 <div class="container-fluid dash-back " *ngIf="this.enableDash === true ">
   <button class="btn mt-2 btn-exit" (click)="enableDash = false">X</button>
-  <app-dashboard [profiles]="this.profiles" [selected]="this.artist"></app-dashboard>
+  <ngx-loading [show]="loadingDash" [config]="{
+        backdropBackgroundColour: 'rgb(18,36,57)',
+        backdropBorderRadius: '0px',
+        primaryColour: '#fff',
+        secondaryColour:'#fff', 
+        tertiaryColour: '#fff'}">
+  </ngx-loading>
+  <app-dashboard  (change)="change($event)" [profiles]="this.profiles" [selected]="this.artist" >
+    
+  </app-dashboard>
 </div>

@@ -19,7 +19,8 @@ export class ProfileTrackerComponent implements OnInit {
   artist;
   showForm;
   spotForm;
-  public loading = false;
+  loading = false;
+  loadingDash = false;
 
   constructor(private tracker: TrackerService) {}
 
@@ -34,8 +35,14 @@ export class ProfileTrackerComponent implements OnInit {
     this.spotForm = false;
   }
 
+  change(event) {
+    console.log(event)
+    this.loadingDash = event;
+  }
+
   openDash(i) {
     this.enableDash = true;
+    this.loadingDash = true;
     this.artist = this.profiles[i]
     return this.profiles[i];
   }

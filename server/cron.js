@@ -39,7 +39,7 @@ const todo = () => {
 }
 
 let daily = new cron.CronJob({
-    cronTime: '00 50 18 * * *',
+    cronTime: '00 00 00 * * *',
     onTick: function () {
         console.log('running ')
         todo();

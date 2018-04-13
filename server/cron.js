@@ -44,7 +44,7 @@ let daily = new cron.CronJob({
         console.log('running ')
         todo();
     },
-    start: false,
+    start: true,
     timeZone: 'Europe/London'
 });
 

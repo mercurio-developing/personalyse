@@ -22,7 +22,8 @@ export class TrackerService {
         this.serverUrl = 'http://localhost:3000/';
         console.log('dev')
       } else {
-        this.serverUrl = environmentProd.server;
+        this.serverUrl = 'http://localhost:3000/';
+        // this.serverUrl = environmentProd.server;
       }
   }
 
@@ -50,7 +51,7 @@ export class TrackerService {
   saveApi(data) {
     return Observable.forkJoin(
       this.http.post(this.serverUrl+'api/facebook/save', { id: data.urls[0] }),
-      this.http.post(this.serverUrl+'api/instagram/save', { id: data.urls[1], artistId: data.artistId }),
+      // this.http.post(this.serverUrl+'api/instagram/save', { id: data.urls[1], artistId: data.artistId }),
       this.http.post(this.serverUrl+'api/twitter/save', { id: data.urls[2], artistId: data.artistId }),
       this.http.post(this.serverUrl+'api/youtube/save', { id: data.urls[3], artistId:data.artistId }),
       this.http.post(this.serverUrl+'api/spotify/save', { id: data.urls[4], artistId: data.artistId })

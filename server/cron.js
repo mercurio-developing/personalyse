@@ -28,7 +28,7 @@ const todo = () => {
             }
             profilesArray.forEach(function (profile) {
                 todoFace(profile.urls[0]);
-                todoInst(profile.urls[1], profile.artistId);
+                // todoInst(profile.urls[1], profile.artistId);
                 todoTwit(profile.urls[2], profile.artistId);
                 todoYou(profile.urls[3], profile.artistId)
                 todoVideo(profile.urls[3], profile.artistId)

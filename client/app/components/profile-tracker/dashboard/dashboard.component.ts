@@ -15,7 +15,7 @@ export class DashboardComponent implements OnInit {
   change: EventEmitter<boolean> = new EventEmitter<boolean>();
   @Input() profiles;
   @Input() selected;
-  fb;
+  fb:any;
   ins;
   tw;
   sp;
@@ -33,11 +33,13 @@ export class DashboardComponent implements OnInit {
       let _id = this.selected._id
       this.tracker.getData(_id).subscribe(data => {
       this.change.emit(false);      
-      this.fb = data[0].face[0]
-      this.ins = data[0].inst[0] 
-      this.tw = data[0].twit[0] 
-      this.you = data[0].you[0] 
-      this.sp = data[0].spot[0]
+        let dato: any;
+        dato = data;
+      this.fb = dato[0].face[0];
+      // this.ins = dato[0].inst[0] 
+      this.tw = dato[0].twit[0]; 
+      this.you = dato[0].you[0]; 
+      this.sp = dato[0].spot[0];
     })
   }
 
@@ -48,12 +50,14 @@ export class DashboardComponent implements OnInit {
     let url = this.profiles[i].urls;
     let urls = this.tracker.getData(_id).subscribe(data => {
       this.loading = false;
-      this.fb = data[0].face[0]
-      this.ins = data[0].inst[0]
-      this.tw = data[0].twit[0]
-      this.you = data[0].you[0]
-      this.sp = data[0].spot[0]
-      this.videos = data[5];
+      let dato: any;
+      dato = data;
+      this.fb = dato[0].face[0]
+      // this.ins = dato[0].inst[0]
+      this.tw = dato[0].twit[0]
+      this.you = dato[0].you[0]
+      this.sp = dato[0].spot[0]
+      this.videos = dato[5];
     })
   }
   

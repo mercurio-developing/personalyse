@@ -14,7 +14,7 @@ const spotifyRoutes   = require('./routes/api/spotify');
 const userRoutes = require('./routes/user');
 const profileRoutes = require('./routes/profile');
 
-const port = process.env.PORT || 3000;
+var port = process.env.PORT || 8000;
 const app = express();
 
 app.use(cors())
@@ -36,6 +36,6 @@ require('./db');
 require('./cron')
 
 app.listen(port, function () {
-    console.log("Express Started on Port 3000");
+    console.log("App is running on port " + port);
 });
 
